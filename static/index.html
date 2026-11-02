@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a13">
+  <meta name="description" content="VeriPixel-AI analyzes image content, metadata, and possible synthetic clues in an evidence-led report.">
+  <title>  | Detect the Real. Reveal the AI.</title>
+  <link rel="icon" type="image/png" href="/static/veripixel-ai-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css?v=9">
+  <script src="/static/script.js?v=4" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="VeriPixel-AI home"><img class="brand-logo" src="/static/veripixel-ai-logo.png" alt="VeriPixel-AI logo"><span>VERIPIXEL-AI</span></a>
+    <div class="top-meta"><span class="live-dot"></span><span id="service-status">CHECKING SERVICE</span><span class="top-divider"></span><span>ANALYSIS LAB / 01</span></div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="eyebrow-line"></span>IMAGE INTELLIGENCE STUDIO</div>
+      <h1 id="page-title">Look closer.<br><span>Read the signals.</span></h1>
+      <p class="intro-copy">A careful read of an image's visual content, embedded metadata, and possible synthetic clues, collected into one evidence-led report.</p>
+      <div class="trust-note"><span class="info-mark" aria-hidden="true">i</span><span>AI-origin detection is probabilistic. This report is an informed assessment, never proof of authenticity.</span></div>
+    </section>
+
+    <section class="workbench" aria-label="Image analysis workspace">
+      <div class="upload-column">
+        <div class="section-heading"><span class="step-number">01</span><div><h2>Choose an image</h2><p>JPG, PNG, WEBP, GIF, BMP or TIFF · up to 12 MB</p></div></div>
+        <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp,image/tiff" hidden>
+        <button class="dropzone" id="dropzone" type="button" aria-label="Choose or drop an image to analyze">
+          <span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 21V5m0 0 6 6m-6-6-6 6M6 19v7h20v-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="drop-title">Drop an image here</span>
+          <span class="drop-or">or</span>
+          <span class="browse-button">Browse files <span aria-hidden="true">↗</span></span>
+          <span class="drop-foot">Your image is analyzed for this report only.</span>
+        </button>
+        <div class="preview-wrap" id="preview-wrap" hidden>
+          <div class="preview-image-frame"><img id="preview-image" alt="Selected image preview"></div>
+          <div class="preview-caption"><div><span class="preview-label">READY TO ANALYZE</span><span id="file-name">image.jpg</span></div><button class="icon-button" id="remove-image" type="button" aria-label="Remove selected image" title="Remove image">×</button></div>
+        </div>
+        <button class="analyze-button" id="analyze-button" type="button" disabled><span class="button-label">Analyze image</span><span class="button-arrow" aria-hidden="true">→</span></button>
+        <p class="upload-error" id="upload-error" role="alert" hidden></p>
+        <div class="privacy-line"><span class="lock-icon" aria-hidden="true">◈</span>Image files are not saved by this app.</div>
+      </div>
+
+      <div class="report-column" aria-live="polite" aria-busy="false" id="report-region">
+        <div class="section-heading report-heading"><span class="step-number">02</span><div><h2>Analysis report</h2><p>Evidence, context and calibrated uncertainty</p></div><span class="report-state" id="report-state">AWAITING IMAGE</span></div>
+        <div class="empty-report" id="empty-report">
+          <div class="report-art" aria-hidden="true"><span class="art-ring ring-one"></span><span class="art-ring ring-two"></span><span class="art-center">VP</span><span class="art-cross cross-one">+</span><span class="art-cross cross-two">+</span></div>
+          <p>Your report will appear here</p>
+          <span>Choose an image to begin the three-stage review.</span>
+        </div>
+        <div class="loading-report" id="loading-report" hidden>
+          <div class="loading-head"><span class="scan-pulse"></span><span>REVIEW IN PROGRESS</span><span class="loading-time">Usually a few seconds</span></div>
+          <div class="workflow-list"><div class="workflow-item active" data-stage="0"><span class="workflow-dot"></span><span>Validate image and inspect file metadata</span><span class="workflow-state">RUNNING</span></div><div class="workflow-item" data-stage="1"><span class="workflow-dot"></span><span>Read visual content and possible clues</span><span class="workflow-state">QUEUED</span></div><div class="workflow-item" data-stage="2"><span class="workflow-dot"></span><span>Combine evidence and summarize limits</span><span class="workflow-state">QUEUED</span></div></div>
+        </div>
+        <div class="result-report" id="result-report" hidden></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>VERIPIXEL-AI <span class="footer-dot">/</span> DETECT THE REAL. REVEAL THE AI.</span><span>Careful assessment. No claim of forensic certainty.</span></footer>
+</body>
+</html>

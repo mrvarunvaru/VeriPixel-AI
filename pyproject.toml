@@ -1,0 +1,8 @@
+[project]
+name = "image-signal"
+version = "1.0.0"
+description = "A cautious AI-image analysis web app"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100
